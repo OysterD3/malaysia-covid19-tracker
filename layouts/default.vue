@@ -5,16 +5,17 @@
         <Nuxt />
       </div>
       <footer>
-        <div class="p-2 text-gray-500">
+        <div class="p-2 text-gray-700">
           Built by
           <a
             class="
-              text-blue-300
-              hover:text-blue-500
+              text-blue-600
+              hover:text-blue-800
               transition-colors
               duration-150
               ease-in-out
             "
+            rel="noreferrer"
             href="https://oysterlee.dev"
             target="_blank"
           >

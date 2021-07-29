@@ -1,22 +1,24 @@
 <template>
-  <VChart style="height: 500px" :option="options" />
+  <div>
+    <h2 class="text-lg md:text-2xl font-bold">Positive Rate</h2>
+    <VChart style="height: 500px" :option="options" />
+  </div>
 </template>
 
 <script lang="ts">
 import * as dayjs from "dayjs";
 import type { EChartsOption } from "echarts";
-import { BarChart, LineChart, LinesChart } from "echarts/charts";
+import { BarChart, LineChart } from "echarts/charts";
 import {
   DataZoomComponent,
   GridComponent,
   LegendComponent,
-  TitleComponent,
   TooltipComponent,
 } from "echarts/components";
 import { use } from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 import Vue from "vue";
-import { DataResponseType } from "../../api";
+import { DataResponseType } from "~/api";
 
 interface Data {
   options: EChartsOption;
@@ -24,7 +26,6 @@ interface Data {
 
 use([
   CanvasRenderer,
-  TitleComponent,
   LegendComponent,
   BarChart,
   LineChart,
@@ -37,9 +38,6 @@ export default Vue.extend({
   name: "ChartTest",
   data: (): Data => ({
     options: {
-      title: {
-        text: "Positive Rate",
-      },
       legend: {
         data: ["Case", "Tested", "Positive Rate"],
       },

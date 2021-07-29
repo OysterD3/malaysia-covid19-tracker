@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-2 md:gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
     <div>
       <div class="text-center mb-2">
         Every {{ data.oneCasePerPeople }} people has 1 confirmed case
@@ -25,7 +25,7 @@
       <div class="text-center mb-2">
         Every {{ data.oneDeathPerPeople }} people has 1 death
       </div>
-      <div class="grid grid-cols-12 gap-1">
+      <div class="grid grid-cols-8 md:grid-cols-12 gap-1">
         <template v-if="data.oneDeathPerPeople < 40">
           <svg
             v-for="v in data.oneDeathPerPeople"
@@ -57,7 +57,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-          <div class="col-span-2 flex items-center justify-center">
+          <div class="col-span-4 md:col-span-2 flex items-center">
             <div class="text-gray-600">
               + {{ data.oneDeathPerPeople - 39 }} more
             </div>

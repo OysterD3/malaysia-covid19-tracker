@@ -1,5 +1,10 @@
 <template>
-  <VChart style="height: 500px" :option="options" />
+  <div>
+    <h2 class="text-lg md:text-2xl font-bold">
+      Vaccination and Registration to Date
+    </h2>
+    <VChart style="height: 500px" :option="options" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,7 +15,6 @@ import {
   DataZoomComponent,
   GridComponent,
   LegendComponent,
-  TitleComponent,
   TooltipComponent,
 } from "echarts/components";
 import { use } from "echarts/core";
@@ -24,7 +28,6 @@ interface Data {
 
 use([
   CanvasRenderer,
-  TitleComponent,
   LegendComponent,
   BarChart,
   LineChart,
@@ -37,9 +40,6 @@ export default Vue.extend({
   name: "ChartVaccination",
   data: (): Data => ({
     options: {
-      title: {
-        text: "Vaccination and Registration to Date",
-      },
       legend: {
         data: ["Registered", "Dose 1", "Dose 2"],
       },

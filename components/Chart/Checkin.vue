@@ -1,22 +1,22 @@
 <template>
-  <VChart style="height: 500px" :option="options" />
+  <div>
+    <h2 class="text-lg md:text-2xl font-bold">MySejahtera Checkins</h2>
+    <VChart style="height: 500px" :option="options" />
+  </div>
 </template>
 
 <script lang="ts">
-import * as dayjs from "dayjs";
 import type { EChartsOption } from "echarts";
 import { BarChart, LineChart } from "echarts/charts";
 import {
   DataZoomComponent,
   GridComponent,
   LegendComponent,
-  TitleComponent,
   TooltipComponent,
 } from "echarts/components";
 import { use } from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 import Vue from "vue";
-import { DataResponseType } from "~/api";
 
 interface Data {
   options: EChartsOption;
@@ -24,7 +24,6 @@ interface Data {
 
 use([
   CanvasRenderer,
-  TitleComponent,
   LegendComponent,
   BarChart,
   LineChart,
@@ -37,9 +36,6 @@ export default Vue.extend({
   name: "ChartCheckin",
   data: (): Data => ({
     options: {
-      title: {
-        text: "MySejahtera Checkin",
-      },
       legend: {
         data: ["Total", "Unique Individual", "Unique Location"],
       },

@@ -1,69 +1,69 @@
 <template>
   <div class="grid grid-cols-3 gap-4">
     <div class="v-stack">
-      <div class="text-2xl text-red-600 font-medium">
+      <div class="text-lg md:text-3xl text-red-600 font-medium">
         {{ formatNumber(data.cases) }}
       </div>
-      <div class="text-gray-500">Confirmed</div>
+      <div class="text-gray-500 text-sm md:text-base">Confirmed</div>
       <div v-if="data.todayCases" class="text-red-600 text-sm">
         +{{ formatNumber(data.todayCases) }}
       </div>
       <div v-else class="text-yellow-500 text-sm">Pending...</div>
     </div>
     <div class="v-stack">
-      <div class="text-2xl text-green-500 font-medium">
+      <div class="text-lg md:text-3xl text-green-700 font-medium">
         {{ formatNumber(data.recovered) }}
       </div>
-      <div class="text-gray-500">Recovered</div>
-      <div v-if="data.todayRecovered" class="text-green-500 text-sm">
+      <div class="text-gray-500 text-sm md:text-base">Recovered</div>
+      <div v-if="data.todayRecovered" class="text-green-700 text-sm">
         +{{ formatNumber(data.todayRecovered) }}
       </div>
       <div v-else class="text-yellow-500 text-sm">Pending...</div>
     </div>
     <div class="v-stack">
-      <div class="text-2xl text-gray-700 font-medium">
+      <div class="text-lg md:text-3xl text-gray-700 font-medium">
         {{ formatNumber(data.deaths) }}
       </div>
-      <div class="text-gray-500">Deaths</div>
+      <div class="text-gray-500 text-sm md:text-base">Deaths</div>
       <div v-if="data.todayDeaths" class="text-gray-700 text-sm">
         +{{ formatNumber(data.todayDeaths) }}
       </div>
       <div v-else class="text-yellow-500 text-sm">Pending...</div>
     </div>
     <div class="v-stack">
-      <div class="text-2xl text-red-500 font-medium">
+      <div class="text-lg md:text-3xl text-red-500 font-medium">
         {{ formatNumber(data.active) }}
       </div>
-      <div class="text-gray-500">In Treatment</div>
+      <div class="text-gray-500 text-sm md:text-base">In Treatment</div>
       <div
         :class="`text-sm ${
-          todayInTreatment.charAt(0) === '+' ? 'text-red-600' : 'text-green-500'
+          todayInTreatment.charAt(0) === '+' ? 'text-red-600' : 'text-green-700'
         }`"
       >
         {{ todayInTreatment }}
       </div>
     </div>
     <div class="v-stack">
-      <div class="text-2xl text-red-800 font-medium">
+      <div class="text-lg md:text-3xl text-red-800 font-medium">
         {{ formatNumber(data.critical) }}
       </div>
-      <div class="text-gray-500">Critical</div>
+      <div class="text-gray-500 text-sm md:text-base">Critical</div>
       <div
         :class="`text-sm ${
-          todayCritical.charAt(0) === '+' ? 'text-red-600' : 'text-green-500'
+          todayCritical.charAt(0) === '+' ? 'text-red-600' : 'text-green-700'
         }`"
       >
         {{ todayCritical }}
       </div>
     </div>
     <div class="v-stack">
-      <div class="text-2xl text-gray-700 font-medium">
+      <div class="text-lg md:text-3xl text-gray-700 font-medium">
         {{ formatNumber(data.tests) }}
       </div>
-      <div class="text-gray-500">Tests</div>
+      <div class="text-gray-500 text-sm md:text-base">Tests</div>
       <div
         :class="`text-sm ${
-          todayTest.charAt(0) === '+' ? 'text-red-600' : 'text-green-500'
+          todayTest.charAt(0) === '+' ? 'text-red-600' : 'text-green-700'
         }`"
       >
         {{ todayTest }}

@@ -1,5 +1,8 @@
 <template>
-  <VChart style="height: 500px" :option="options" />
+  <div>
+    <h2 class="text-lg md:text-2xl font-bold">Daily Cases (vs Cluster)</h2>
+    <VChart style="height: 500px" :option="options" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,7 +25,6 @@ interface Data {
 
 use([
   CanvasRenderer,
-  TitleComponent,
   LegendComponent,
   LineChart,
   DataZoomComponent,
@@ -34,9 +36,6 @@ export default Vue.extend({
   name: "ChartCasesPerDay",
   data: (): Data => ({
     options: {
-      title: {
-        text: "Daily Cases (vs Cluster)",
-      },
       legend: {
         data: [
           "Case",

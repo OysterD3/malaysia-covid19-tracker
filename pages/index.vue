@@ -1,5 +1,25 @@
 <template>
   <div class="space-y-4">
+    <h1 class="text-center text-2xl md:text-4xl font-bold">
+      Malaysia Covid-19 Tracker
+    </h1>
+    <div class="text-center p-2 text-gray-700">
+      Built by
+      <a
+        class="
+          text-blue-600
+          hover:text-blue-800
+          transition-colors
+          duration-150
+          ease-in-out
+        "
+        rel="noreferrer"
+        href="https://oysterlee.dev"
+        target="_blank"
+      >
+        Oyster Lee
+      </a>
+    </div>
     <ChartTotal :data="data" />
     <One :data="data" />
     <ChartTest />
