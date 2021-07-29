@@ -8,12 +8,59 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Malaysia Covid-19 Dashboard",
+    title: "Malaysia Covid-19 Tracker by Oyster Lee",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "A Covid-19 Tracker for Malaysia which was developed by Oyster Lee. Data was provided by disease.sh and MoH Malaysia",
+      },
+      { name: "og:title", content: "Malaysia Covid-19 Tracker by Oyster Lee" },
+      {
+        name: "og:description",
+        content:
+          "A Covid-19 Tracker for Malaysia which was developed by Oyster Lee. Data was provided by disease.sh and MoH Malaysia",
+      },
+      {
+        name: "og:site_name",
+        content: "Malaysia Covid-19 Tracker",
+      },
+      {
+        name: "og:image",
+        content: "/og.png",
+      },
+      {
+        name: "og:url",
+        content: "https://covid19.oysterlee.dev",
+      },
+      {
+        name: "twitter:title",
+        content: "Malaysia Covid-19 Tracker by Oyster Lee",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "A Covid-19 Tracker for Malaysia which was developed by Oyster Lee. Data was provided by disease.sh and MoH Malaysia",
+      },
+      {
+        name: "twitter:card",
+        content: "summary",
+      },
+      {
+        name: "twitter:image",
+        content: "/og.png",
+      },
+      {
+        name: "twitter:url",
+        content: "https://covid19.oysterlee.dev",
+      },
+      {
+        name: "theme-color",
+        content: "#1c2734",
+      },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
@@ -22,7 +69,11 @@ export default {
   css: ["~/assets/styles/index.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/api", "~/plugins/echarts"],
+  plugins: [
+    "~/plugins/api",
+    "~/plugins/echarts",
+    { src: "~/plugins/gtag", mode: "client" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -52,6 +103,8 @@ export default {
   pwa: {
     manifest: {
       lang: "en",
+      name: "Malaysia Covid-19 Tracker",
+      short_name: "MY Covid19 Tracker",
     },
   },
 
