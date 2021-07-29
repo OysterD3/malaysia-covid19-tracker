@@ -5,6 +5,7 @@ export default {
   },
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -106,6 +107,10 @@ export default {
       name: "Malaysia Covid-19 Tracker",
       short_name: "MY Covid19 Tracker",
     },
+  },
+
+  typescript: {
+    typeCheck: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -21,7 +21,7 @@
       </a>
     </div>
     <ChartTotal :data="data" />
-    <One :data="data" />
+    <ChartOne :data="data" />
     <ChartTest />
     <ChartCasesPerDay />
     <ChartVaccination />
@@ -31,11 +31,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import One from "~/components/Chart/One.vue";
 import { COUNTRY_INITIAL_DATA } from "~/config";
 
 export default Vue.extend({
-  components: { One },
   data: () => ({
     data: COUNTRY_INITIAL_DATA,
   }),
