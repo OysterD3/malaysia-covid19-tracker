@@ -1,0 +1,7 @@
+.v-stack {
+  @apply flex flex-col items-center justify-center;
+}
+
+.h-stack {
+  @apply flex items-center justify-center;
+}
