@@ -7,7 +7,7 @@ const gtag: Plugin = (ctx) => {
   console.log("env =>", ctx.env);
   if (ctx.env.GA_ID) {
     Vue.use(VueGtag, {
-      config: { id: "G-WKTQVDJ2T7" },
+      config: { id: ctx.env.GA_ID },
     });
   }
 };
